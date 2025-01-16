@@ -1,17 +1,19 @@
 import streamlit as st
 from tensorflow.keras.models import load_model
 from sklearn.feature_extraction.text import TfidfVectorizer
-import numpy as np
 import os
 import pickle
 
-if os.path.exists('../models/model/spam_ham_classifier_model.h5'):
-    model = load_model('../models/model/spam_ham_classifier_model.h5')
+model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'model', 'spam_ham_classifier_model.h5')
+vectorizer_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'model', 'vectorizer.pkl')
+
+if os.path.exists(model_path):
+    model = load_model(model_path)
 else:
     print("Model not found.")
 
-if os.path.exists('../models/model/vectorizer.pkl'):
-    with open("../models/model/vectorizer.pkl", "rb") as file:
+if os.path.exists(vectorizer_path):
+    with open(vectorizer_path, "rb") as file:
         vectorizer = pickle.load(file)
 else:
     print("Vectorizer file not found.")
