@@ -1,0 +1,11 @@
+Anaconda3-2022.05-Linux-x86_64.sh
+mlruns/
+mlartifacts/
+outputs/
+.env
+diab/
+diabcl/
+venv/
+__pycache__/
+.ipynb_checkpoints/
+datas/
