@@ -4,8 +4,8 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 import os
 import pickle
 
-model_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'model', 'spam_ham_classifier_model.h5')
-vectorizer_path = os.path.join(os.path.dirname(__file__), '..', 'models', 'model', 'vectorizer.pkl')
+model_path = os.path.join(os.path.dirname(__file__),  'models', 'spam_ham_classifier_model.h5')
+vectorizer_path = os.path.join(os.path.dirname(__file__), 'models', 'vectorizer.pkl')
 
 if os.path.exists(model_path):
     model = load_model(model_path)
